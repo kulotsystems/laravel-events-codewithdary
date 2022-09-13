@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\UserSubscribeEvent;
+use App\Mail\UserSubscribeMessage;
 use App\Models\NewsLetter;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
@@ -32,6 +33,6 @@ class EmailOwnerAboutSubscription
             'email' => $event->email
         ]);
 
-        Mail::to($event->email)->send();
+        Mail::to($event->email)->send(new UserSubscribeMessage());
     }
 }
