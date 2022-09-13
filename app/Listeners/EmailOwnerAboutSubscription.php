@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Events\UserSubscribeEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -23,8 +24,8 @@ class EmailOwnerAboutSubscription
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle (UserSubscribeEvent $event)
     {
-        //
+
     }
 }
